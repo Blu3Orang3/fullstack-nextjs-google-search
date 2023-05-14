@@ -5,7 +5,7 @@ export interface IBaseTemplate {
 }
 
 const BaseTemplate: React.FC<IBaseTemplate> = ({ sampleTextProp }) => {
-  return <div className="bg-gradient-to-r from-cyan-500 to-blue-500">{ sampleTextProp }</div>;
+  return <div>{ sampleTextProp }</div>;
 };
 
 export default BaseTemplate;
