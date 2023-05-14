@@ -4,6 +4,7 @@ const config: StorybookConfig = {
     '../stories/**/*.mdx',
     '../stories/**/*.stories.@(js|jsx|ts|tsx)',
     '../components/**/*.stories.@(js|jsx|ts|tsx)',
+    '../_stories_/**/*.stories.@(js|jsx|ts|tsx)',
   ],
   /** Expose public folder to storybook as static */
   staticDirs: ['../public'],
