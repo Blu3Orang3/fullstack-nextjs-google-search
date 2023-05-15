@@ -1,5 +1,7 @@
 import type { Preview } from '@storybook/react';
+import { RouterContext } from 'next/dist/shared/lib/router-context';
 import '../pages/globals.css';
+
 
 const BREAKPOINTS_INT = {
   xs: 375,
@@ -8,7 +10,6 @@ const BREAKPOINTS_INT = {
   lg: 1200,
   xl: 1536,
 };
-
 
 const customViewports = Object.fromEntries(
   Object.entries(BREAKPOINTS_INT).map(([key, val], idx) => {
@@ -26,6 +27,7 @@ const customViewports = Object.fromEntries(
   })
 );
 
+
 const preview: Preview = {
   parameters: {
     actions: { argTypesRegex: '^on[A-Z].*' },
@@ -36,6 +38,10 @@ const preview: Preview = {
       },
     },
     viewport: { viewports: customViewports },
+    layout: 'fullscreen',
+    nextRouter: {
+      Provider: RouterContext.Provider,
+    },
   },
 };
 
